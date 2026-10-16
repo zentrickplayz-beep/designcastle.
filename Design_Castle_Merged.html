@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>Design Castle | Luxury Interior Design</title>
+<meta name="description" content="Discover elegant interiors, modular kitchens, luxury bedrooms and bespoke spaces with Design Castle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#d5b16a;--gold2:#f8e6ad;--black:#090909;
+  --panel:#15130f;--text:#f6f0e5;--muted:#aaa49a;
+  --line:rgba(213,177,106,.3);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --display:'Cinzel',Georgia,serif;
+  --sans:'DM Sans',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--black);color:var(--text);font-family:var(--sans);line-height:1.7;overflow-x:hidden}
+body.light{--black:#f5f0e6;--panel:#fffaf0;--text:#282116;--muted:#655e51;--line:rgba(130,94,34,.3)}
+a{color:inherit;text-decoration:none}
+img{width:100%;display:block;object-fit:cover}
+button,input,select,textarea{font:inherit}
+button,a{touch-action:manipulation}
+button{cursor:pointer}
+.container{width:min(1180px,91%);margin:auto}
+.gold{background:linear-gradient(110deg,#a47a30,#ffedb3,#c59a49);color:transparent;background-clip:text;-webkit-background-clip:text}
+section{padding:90px 0}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15}
+h2{font-size:clamp(38px,5vw,65px)}
+p{color:var(--muted)}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:17px}
+.section-head{text-align:center;margin-bottom:40px}
+.section-head p{max-width:650px;margin:17px auto;font-size:13px}
+.ornament{color:var(--gold);margin:18px auto;font-size:19px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border:1px solid var(--gold);font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;transition:.25s}
+.btn-gold{background:linear-gradient(110deg,#a47a30,#f8e6ad,#c59a49);color:#171208}
+.btn-outline{color:var(--gold2);background:transparent}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 25px #0004}
+body.light .btn-outline{color:#77561e}
+header{position:fixed;z-index:1000;top:0;left:0;width:100%;background:#090909ed;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo{width:48px;height:48px;display:grid;place-items:center;border:2px solid var(--gold);outline:1px solid #a37b35;outline-offset:3px;color:var(--gold2);font:600 20px var(--display);transform:rotate(45deg)}
+.logo span{transform:rotate(-45deg)}
+.brand-name{font:500 19px var(--display);color:#f5ead1}
+.brand-sub{font-size:8px;letter-spacing:2px;color:var(--gold)}
+.navlinks{display:flex;gap:19px;align-items:center}
+.navlinks a{font-size:10px;color:#e4ddce}
+.navlinks a:hover{color:var(--gold)}
+.menu,.theme{border:1px solid var(--line);background:transparent;color:var(--gold);padding:9px 12px}
+.menu{display:none}
+.hero{min-height:740px;height:95vh;max-height:1000px;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:80px}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,#050505f2 0%,#050505b8 50%,#05050528 100%),linear-gradient(0deg,var(--black),transparent 30%),url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero-content{position:relative;max-width:740px;padding:50px 0}
+.hero h1{font-size:clamp(58px,9vw,105px);margin:20px 0 26px;line-height:.99}
+.hero p{max-width:490px;color:#ded6c7;font-size:14px;margin-bottom:30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-note{color:var(--gold2);font-size:9px;letter-spacing:2px;margin-top:28px}
+.stats{border-block:1px solid var(--line);background:linear-gradient(90deg,#100e09,#1c170d,#100e09);padding:27px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{text-align:center;border-right:1px solid var(--line);padding:7px}
+.stat:last-child{border:0}
+.stat strong{font:500 39px var(--serif);color:var(--gold2);display:block}
+.stat span{font-size:9px;color:#b9ae98;letter-spacing:1.5px;text-transform:uppercase}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-photo{position:relative;padding:12px;border:1px solid var(--line)}
+.about-photo img{height:490px}
+.about-photo:after{content:"";position:absolute;inset:23px;border:1px solid #e0c27b55;pointer-events:none}
+.about-copy p{font-size:13px;margin:18px 0}
+.points{display:grid;gap:14px;margin:25px 0}
+.point{display:flex;gap:13px;font-size:12px}
+.point b{color:var(--gold);font-size:17px}
+.rooms{background:#100f0d;border-block:1px solid var(--line)}
+.rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.room{height:350px;position:relative;overflow:hidden;border:1px solid var(--line);cursor:pointer;background:#15120d}
+.room img{height:100%;transition:.6s;filter:brightness(.72)}
+.room:hover img{transform:scale(1.07);filter:brightness(.95)}
+.room:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050505ed,transparent 75%)}
+.room-info{position:absolute;z-index:2;bottom:20px;left:22px;right:18px}
+.room-info small{font-size:9px;letter-spacing:2px;color:var(--gold)}
+.room-info h3{font-size:31px;margin:5px 0}
+.room-info p{font-size:11px;color:#d2c9b8}
+.gallery-tools{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:20px 0 30px}
+.field-input{background:#15130f;color:#f8efdd;border:1px solid var(--line);padding:12px;min-width:190px;max-width:100%;outline:none}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.gallery-card{position:relative;height:260px;overflow:hidden;border:1px solid var(--line);cursor:pointer}
+.gallery-card img{height:100%;transition:.5s;filter:brightness(.8)}
+.gallery-card:hover img{transform:scale(1.06);filter:brightness(1)}
+.gallery-card span{position:absolute;bottom:0;left:0;right:0;padding:22px 15px 12px;background:linear-gradient(transparent,#000d);color:#f7e8c3;font:22px var(--serif)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service{border:1px solid var(--line);padding:27px;background:linear-gradient(145deg,#1c1810,#0d0d0c);transition:.3s}
+.service:hover{transform:translateY(-5px);border-color:var(--gold)}
+.service .symbol{font-size:28px;color:var(--gold)}
+.service h3{font-size:27px;margin:13px 0}
+.service p{font-size:12px}
+.process{background:linear-gradient(130deg,#17130c,#090909)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{border:1px solid var(--line);padding:23px}
+.step strong{font:45px var(--serif);color:var(--gold)}
+.step h3{font-size:24px;margin:7px 0}
+.step p{font-size:12px}
+.planner{background:radial-gradient(ellipse at top,#2a2110,#090909 65%);border-block:1px solid var(--line)}
+.planner-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{padding:27px;border:1px solid var(--line);background:#14120ee8}
+.panel h3{font-size:29px;margin-bottom:15px}
+.label{display:block;font-size:10px;letter-spacing:1px;color:var(--gold2);margin:14px 0 6px}
+.panel input,.panel select,.panel textarea,.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:12px;background:#080808;color:#f5ecda;border:1px solid #49402d;outline:none}
+.panel input:focus,.panel select:focus,.panel textarea:focus{border-color:var(--gold)}
+.panel input[type=range]{padding:0;accent-color:var(--gold)}
+.estimate{border-top:1px solid var(--line);margin-top:20px;padding-top:20px}
+.estimate strong{font:42px var(--serif);color:var(--gold2);display:block}
+.hint{font-size:11px;margin-top:8px}
+.checks{display:flex;flex-wrap:wrap;gap:10px}
+.checks label{font-size:12px;color:var(--text);border:1px solid var(--line);padding:7px 10px}
+.checks input{width:auto;accent-color:var(--gold)}
+.brief-output{white-space:pre-wrap;background:#080808;color:#eee0bd;padding:15px;font-size:12px;margin:15px 0;min-height:80px;overflow-wrap:anywhere}
+.quote{padding:80px 0;text-align:center;background:linear-gradient(#080808c9,#080808ed),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85') center/cover}
+.quote blockquote{font:clamp(30px,5vw,56px) var(--serif);max-width:850px;margin:20px auto}
+.quote small{color:var(--gold);letter-spacing:3px}
+.faq-list{max-width:850px;margin:auto;display:grid;gap:10px}
+details{border:1px solid var(--line);background:#15130f}
+summary{padding:17px 20px;cursor:pointer;font:23px var(--serif);color:var(--text)}
+details p{padding:0 20px 20px;font-size:12px}
+.contact{background:#0c0c0b;border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px}
+.contact-copy p{font-size:13px;margin:15px 0}
+.contact-link{display:flex;gap:13px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}
+.contact-link .icon{width:42px;height:42px;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);font-size:19px}
+.contact-link small{display:block;color:var(--muted);font-size:10px}
+.contact-link strong{font-size:13px;color:var(--text)}
+.contact-form{padding:26px;background:#15130f;border:1px solid var(--line)}
+.contact-form h3{font-size:34px}
+.contact-form p{font-size:12px;margin:8px 0 20px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-form label{display:block;font-size:10px;color:var(--gold2);margin:12px 0 5px}
+.contact-form textarea{min-height:105px;resize:vertical}
+.contact-form button{margin-top:15px;width:100%}
+.cta{padding:48px 0;background:linear-gradient(100deg,#20190c,#0e0d0a);border-block:1px solid var(--line)}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta h2{font-size:clamp(30px,4vw,46px)}
+.cta p{font-size:12px;margin-top:6px}
+footer{padding:45px 0 18px;background:#070707;color:#eee5d4}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px;padding-bottom:30px}
+footer p{font-size:12px;margin:15px 0}
+footer h4{color:var(--gold);font-size:10px;letter-spacing:2px;margin-bottom:15px}
+footer .footlink{display:block;font-size:12px;margin:8px 0;color:#c6bcaa}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{border:1px solid var(--line);padding:8px 12px;color:var(--gold);font-size:11px}
+.copyright{border-top:1px solid var(--line);padding-top:16px;color:#938b7b;font-size:10px;display:flex;justify-content:space-between;gap:10px}
+.float{position:fixed;right:20px;bottom:20px;z-index:900;background:#1caf62;color:white;border-radius:50px;padding:13px 17px;box-shadow:0 5px 22px #0007;font-size:12px}
+.top{position:fixed;bottom:22px;left:20px;z-index:900;background:#17130c;color:var(--gold);border:1px solid var(--line);padding:10px 13px;display:none}
+.top.show{display:block}
+.theme{position:fixed;right:22px;bottom:83px;z-index:900;background:#15130f;border-radius:50%;width:45px;height:45px}
+.lightbox{display:none;position:fixed;inset:0;z-index:2000;background:#000f;align-items:center;justify-content:center;padding:25px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:78vh;width:auto;box-shadow:0 10px 50px #000}
+.lightbox button{position:absolute;border:0;background:var(--gold);color:#111;padding:10px 14px;font-size:20px}
+#closeLightbox{right:20px;top:20px}
+#prevImage{left:20px;top:50%}
+#nextImage{right:20px;top:50%}
+#lightboxCaption{position:absolute;bottom:20px;color:#f5e6c5;text-align:center}
+.toast{position:fixed;z-index:3000;bottom:90px;left:50%;transform:translateX(-50%);background:#1b1810;color:#f7e8c3;border:1px solid var(--gold);padding:12px 18px;display:none;font-size:12px;max-width:90vw}
+.toast.show{display:block}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media(max-width:950px){.navlinks{gap:10px}.navlinks a{font-size:9px}.about-grid{gap:30px}.rooms-grid,.gallery-grid,.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+ .nav{height:70px}.brand-name{font-size:16px}.brand-sub{font-size:7px}.logo{width:39px;height:39px;font-size:16px}
+ .menu{display:block}.navlinks{display:none;position:absolute;top:70px;left:0;width:100%;background:#090909;padding:15px 5%;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}
+ .navlinks.open{display:flex}.navlinks a{font-size:12px;padding:9px;border-bottom:1px solid #ffffff10}
+ .nav>.nav-cta{display:none}.hero{min-height:650px;height:90svh}.hero h1{font-size:clamp(55px,12vw,80px)}
+ section{padding:65px 0}.stats-grid{grid-template-columns:repeat(2,1fr);gap:18px 0}.stat:nth-child(2){border:0}
+ .about-grid,.planner-grid,.contact-grid{grid-template-columns:1fr;gap:30px}.about-photo img{height:350px}
+ .rooms-grid,.gallery-grid,.services-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .room{height:290px}.room-info{left:13px;right:10px}.room-info h3{font-size:24px}
+ .gallery-card{height:220px}.process-grid{grid-template-columns:repeat(2,1fr)}
+ .contact-form{padding:18px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}
+ .cta-inner{align-items:flex-start;flex-direction:column}.copyright{flex-direction:column}
+}
+@media(max-width:430px){
+ .rooms-grid,.gallery-grid,.services-grid{grid-template-columns:1fr}
+ .room{height:340px}.gallery-card{height:250px}
+ .form-grid{grid-template-columns:1fr;gap:0}.actions .btn{width:100%}
+ .process-grid{gap:9px}.step{padding:16px}.hero p{font-size:13px}
+}
+
+/* Added interactive design features */
+.extra-studio{background:linear-gradient(135deg,#17130c,#090909);border-block:1px solid var(--line)}
+.extra-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.extra-panel{padding:25px;border:1px solid var(--line);background:#14120ee8;min-width:0}
+.extra-panel h3{font-size:29px;margin-bottom:10px}
+.extra-panel p{font-size:12px}
+.extra-panel input,.extra-panel select,.extra-panel textarea{width:100%;padding:11px;background:#080808;color:#f5ecda;border:1px solid #49402d;margin:7px 0 12px}
+.palette{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.palette button{width:38px;height:38px;border-radius:50%;border:2px solid #e7d5a2;outline:1px solid #5c4c2b}
+.palette button[aria-pressed="true"]{outline:3px solid var(--gold2);outline-offset:3px}
+.mood-result,.extra-output{white-space:pre-wrap;border:1px solid var(--line);padding:14px;margin-top:14px;color:#e8d9bb;background:#080808;font-size:12px;overflow-wrap:anywhere}
+.compare-box{height:260px;position:relative;overflow:hidden;border:1px solid var(--line);margin:18px 0;background:#211b12}
+.compare-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.compare-before{position:absolute;inset:0 auto 0 0;width:50%;overflow:hidden;border-right:3px solid var(--gold);z-index:2}
+.compare-before img{width:min(700px,100vw);max-width:none}
+.compare-range{width:100%;accent-color:var(--gold)}
+.mini-room{height:270px;position:relative;overflow:hidden;border:1px solid var(--gold);background-color:#211e18;background-image:linear-gradient(#ffffff0c 1px,transparent 1px),linear-gradient(90deg,#ffffff0c 1px,transparent 1px);background-size:22px 22px;margin:16px 0}
+.mini-furniture{position:absolute;display:grid;place-items:center;background:#c4a56b;border:1px solid #f0d9a2;color:#171208;font:11px Arial,sans-serif;padding:7px;min-width:55px;min-height:35px;touch-action:none;cursor:grab;user-select:none}
+.mini-furniture:active{cursor:grabbing}
+.mini-sofa{left:24%;top:57%;width:48%;height:22%}.mini-table{left:39%;top:30%;width:22%;height:16%;border-radius:50%}.mini-rug{left:17%;top:20%;width:65%;height:65%;background:#9e886055;border-style:dashed;z-index:0}.mini-plant{left:82%;top:8%;width:12%;height:17%;border-radius:50%;background:#7e8752}
+.extra-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+.extra-studio .btn{margin-top:5px}
+@media(max-width:760px){.extra-grid{grid-template-columns:1fr}.extra-panel{padding:18px}.compare-box{height:220px}}
+
+</style>
+</head>
+<body>
+
+<header>
+ <div class="container nav">
+  <a class="brand" href="#home">
+   <div class="logo"><span>DC</span></div>
+   <div><div class="brand-name">DESIGN <span class="gold">CASTLE</span></div><div class="brand-sub">THE ART OF LUXURY LIVING</div></div>
+  </a>
+  <nav class="navlinks" id="navlinks">
+   <a href="#home">Home</a><a href="#about">Our Story</a><a href="#rooms">Interiors</a>
+   <a href="#gallery">Gallery</a><a href="#services">Services</a><a href="#planner">Planner</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="btn btn-gold nav-cta" href="tel:+918891155322">Let's Talk ↗</a>
+  <button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-bg"></div>
+ <div class="container"><div class="hero-content">
+  <div class="eyebrow">✦ Bespoke Interior Experiences ✦</div>
+  <h1>Crafting Spaces.<br>Creating <span class="gold">Legacies.</span></h1>
+  <p>A home should be more than beautiful. It should tell your story. Discover timeless interiors where thoughtful design and everyday comfort come together.</p>
+  <div class="actions"><a class="btn btn-gold" href="#gallery">Explore Gallery ↗</a><a class="btn btn-outline" href="#contact">Create Your Dream Space</a></div>
+  <div class="hero-note">✧ DESIGNED WITH PURPOSE · FINISHED WITH ELEGANCE</div>
+ </div></div>
+</section>
+
+<div class="stats"><div class="container stats-grid">
+ <div class="stat"><strong>300<span class="gold">+</span></strong><span>Projects*</span></div>
+ <div class="stat"><strong>✦</strong><span>Personalised Design</span></div>
+ <div class="stat"><strong>01/01</strong><span>Your Vision First</span></div>
+ <div class="stat"><strong>∞</strong><span>Creative Possibilities</span></div>
+</div></div>
+
+<section id="about"><div class="container about-grid">
+ <div class="about-photo reveal"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1100&q=85" alt="Elegant modern home interior"></div>
+ <div class="about-copy reveal"><div class="eyebrow">The Design Castle Story</div>
+  <h2>Beyond Trends.<br><span class="gold">Beyond Ordinary.</span></h2>
+  <div class="ornament">✧ ───── ✧</div>
+  <p>Exceptional interiors begin with understanding the people who live in them. Every material, finish, light and line should have a purpose.</p>
+  <p>Our design philosophy combines refined aesthetics, practical planning and comfort to create spaces that feel personal and enduring.</p>
+  <div class="points"><div class="point"><b>✦</b><div><strong>Personalised by Design</strong><p>Spaces inspired by your taste and everyday life.</p></div></div>
+  <div class="point"><b>✦</b><div><strong>Beauty With Purpose</strong><p>Elegant interiors designed for real living.</p></div></div>
+  <div class="point"><b>✦</b><div><strong>Details That Matter</strong><p>Careful choices from layout to final finish.</p></div></div></div>
+  <a href="#contact" class="btn btn-outline">Discuss Your Project ↗</a>
+ </div>
+</div></section>
+
+<section class="rooms" id="rooms"><div class="container">
+ <div class="section-head reveal"><div class="eyebrow">A Room for Every Story</div><h2>Explore Our <span class="gold">Interiors</span></h2><div class="ornament">✧ ───── ✧</div><p>Discover inspiration for the spaces where life happens.</p></div>
+ <div class="rooms-grid">
+  <a class="room reveal" href="#contact"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=850&q=85" alt="Modern kitchen"><div class="room-info"><small>01 · CULINARY</small><h3>Modular Kitchen</h3><p>Beautiful, practical everyday living.</p></div></a>
+  <a class="room reveal" href="#contact"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=850&q=85" alt="Elegant living room"><div class="room-info"><small>02 · GATHER</small><h3>Living Hall</h3><p>Make every welcome memorable.</p></div></a>
+  <a class="room reveal" href="#contact"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=850&q=85" alt="Dining room"><div class="room-info"><small>03 · CONNECT</small><h3>Dining Room</h3><p>Beautiful settings for shared moments.</p></div></a>
+  <a class="room reveal" href="#contact"><img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=850&q=85" alt="Bedroom interior"><div class="room-info"><small>04 · UNWIND</small><h3>Master Bedroom</h3><p>Your own sanctuary of comfort.</p></div></a>
+  <a class="room reveal" href="#contact"><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=850&q=85" alt="Modern bathroom"><div class="room-info"><small>05 · REFRESH</small><h3>Luxury Bathroom</h3><p>Everyday rituals, elevated.</p></div></a>
+  <a class="room reveal" href="#contact"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=850&q=85" alt="Office interior"><div class="room-info"><small>06 · CREATE</small><h3>Office & Workspace</h3><p>Focus, comfort and inspiration.</p></div></a>
+ </div>
+</div></section>
+
+<section id="gallery"><div class="container">
+ <div class="section-head reveal"><div class="eyebrow">Inspiration in Every Detail</div><h2>The Art of <span class="gold">Beautiful Spaces</span></h2><p>Search, filter and explore a curated gallery of interior inspiration.</p></div>
+ <div class="gallery-tools">
+  <input class="field-input" id="gallerySearch" type="search" placeholder="Search gallery..." aria-label="Search gallery">
+  <select class="field-input" id="galleryFilter" aria-label="Filter gallery">
+   <option value="all">All styles</option><option value="living">Living room</option><option value="kitchen">Kitchen</option><option value="bedroom">Bedroom</option><option value="dining">Dining</option><option value="modern">Modern</option>
+  </select>
+  <button class="btn btn-outline" id="resetGallery">Reset filters</button>
+ </div>
+ <div class="gallery-grid" id="galleryGrid">
+  <div class="gallery-card" data-category="living modern" data-title="Signature Living Room"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Signature living room" loading="lazy"><span>Signature Living</span></div>
+  <div class="gallery-card" data-category="kitchen modern" data-title="Modern Kitchen"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="Modern kitchen" loading="lazy"><span>Modern Kitchen</span></div>
+  <div class="gallery-card" data-category="bedroom" data-title="Quiet Luxury Bedroom"><img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=900&q=85" alt="Quiet luxury bedroom" loading="lazy"><span>Quiet Luxury</span></div>
+  <div class="gallery-card" data-category="dining modern" data-title="Dining in Style"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85" alt="Dining room inspiration" loading="lazy"><span>Dining in Style</span></div>
+  <div class="gallery-card" data-category="living modern" data-title="Warm Minimalism"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Warm minimalism" loading="lazy"><span>Warm Minimalism</span></div>
+  <div class="gallery-card" data-category="bedroom modern" data-title="Contemporary Comfort"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Contemporary home" loading="lazy"><span>Contemporary Comfort</span></div>
+ </div>
+ <p class="hint" style="text-align:center">Gallery images are illustrative inspiration, not verified completed projects.</p>
+</div></section>
+
+<section id="services"><div class="container">
+ <div class="section-head reveal"><div class="eyebrow">What We Do</div><h2>Services with <span class="gold">Purpose</span></h2><p>Thoughtful design support for spaces of different sizes and styles.</p></div>
+ <div class="services-grid">
+  <article class="service reveal"><div class="symbol">✧</div><h3>Interior Design</h3><p>Personalised concepts, palettes and finishes inspired by your taste.</p></article>
+  <article class="service reveal"><div class="symbol">⌂</div><h3>Space Planning</h3><p>Layouts that bring comfort, movement and purpose to every room.</p></article>
+  <article class="service reveal"><div class="symbol">▤</div><h3>Modular Kitchens</h3><p>Organised kitchen concepts tailored to storage and cooking needs.</p></article>
+  <article class="service reveal"><div class="symbol">◇</div><h3>Custom Furniture</h3><p>Furniture ideas that complement the scale and personality of your space.</p></article>
+  <article class="service reveal"><div class="symbol">☼</div><h3>Lighting Design</h3><p>Layered lighting concepts that create warmth and atmosphere.</p></article>
+  <article class="service reveal"><div class="symbol">◈</div><h3>Complete Interiors</h3><p>A cohesive approach to rooms, materials and finishing details.</p></article>
+  <article class="service reveal"><div class="symbol">❖</div><h3>False Ceilings</h3><p>Ceiling concepts that add architectural detail and visual interest.</p></article>
+  <article class="service reveal"><div class="symbol">✦</div><h3>Wall Treatments</h3><p>Accent walls, decorative finishes and material combinations.</p></article>
+  <article class="service reveal"><div class="symbol">⌘</div><h3>Decor Consultation</h3><p>Help coordinating accessories, textures and finishing touches.</p></article>
+ </div>
+</div></section>
+
+<section class="process" id="process"><div class="container">
+ <div class="section-head"><div class="eyebrow">From Vision to Reality</div><h2>Your Journey to <span class="gold">Beautiful Living</span></h2></div>
+ <div class="process-grid">
+  <article class="step"><strong>01</strong><h3>Discover</h3><p>Understand your lifestyle, preferences and priorities.</p></article>
+  <article class="step"><strong>02</strong><h3>Design</h3><p>Explore concepts, layouts, colour schemes and materials.</p></article>
+  <article class="step"><strong>03</strong><h3>Refine</h3><p>Review options and clarify the design direction.</p></article>
+  <article class="step"><strong>04</strong><h3>Bring to Life</h3><p>Plan the next steps with your chosen project team.</p></article>
+ </div>
+</div></section>
+
+<section class="planner" id="planner"><div class="container">
+ <div class="section-head"><div class="eyebrow">Plan Your Dream Space</div><h2>Your Personal <span class="gold">Design Studio</span></h2><p>Explore an illustrative budget and prepare a brief for your enquiry.</p></div>
+ <div class="planner-grid">
+  <div class="panel">
+   <h3>Budget Estimator</h3>
+   <p class="hint">This tool gives a rough planning example in Indian rupees. It is not an official Design Castle quotation.</p>
+   <label class="label" for="roomType">Room type</label>
+   <select id="roomType"><option value="1">Bedroom</option><option value="1.3">Living room</option><option value="1.5">Modular kitchen</option><option value="1.1">Dining room</option><option value="1.2">Full home</option></select>
+   <label class="label" for="area">Approximate area: <span id="areaValue">150</span> sq. ft.</label>
+   <input type="range" id="area" min="50" max="2000" step="25" value="150">
+   <label class="label" for="finish">Finish level</label>
+   <select id="finish"><option value="900">Essential — ₹900/sq. ft. base</option><option value="1500" selected>Premium — ₹1,500/sq. ft. base</option><option value="2500">Luxury — ₹2,500/sq. ft. base</option></select>
+   <div class="estimate"><p>Illustrative estimate</p><strong id="estimate">₹3,37,500</strong><p class="hint" id="estimateRange">Planning range shown below.</p></div>
+  </div>
+  <div class="panel">
+   <h3>Design Brief Builder</h3>
+   <label class="label" for="clientName">Your name</label><input id="clientName" placeholder="Enter your name">
+   <label class="label" for="briefRoom">What would you like to design?</label>
+   <select id="briefRoom"><option>Full home</option><option>Modular kitchen</option><option>Living room</option><option>Bedroom</option><option>Dining room</option><option>Office</option><option>Other</option></select>
+   <label class="label">Preferred style</label>
+   <div class="checks"><label><input type="checkbox" name="style" value="Modern"> Modern</label><label><input type="checkbox" name="style" value="Classic"> Classic</label><label><input type="checkbox" name="style" value="Minimal"> Minimal</label><label><input type="checkbox" name="style" value="Luxury"> Luxury</label></div>
+   <label class="label" for="budget">Budget range</label><select id="budget"><option>Below ₹2 lakh</option><option>₹2–5 lakh</option><option>₹5–10 lakh</option><option>₹10 lakh+</option><option>Need guidance</option></select>
+   <label class="label" for="briefNotes">Additional requirements</label><textarea id="briefNotes" rows="3" placeholder="Colours, room size, storage needs, ideas..."></textarea>
+   <button class="btn btn-gold" id="buildBrief" type="button">Prepare My Brief ↗</button>
+   <div id="briefOutput" class="brief-output" hidden></div>
+   <button class="btn btn-outline" id="sendBrief" type="button" hidden>Send Brief on WhatsApp ↗</button>
+  </div>
+ </div>
+</div></section>
+
+<section class="quote"><div class="container">
+ <div class="eyebrow">A Thought for Every Home</div>
+ <blockquote>“Luxury is not about having more. It is about making every detail <span class="gold">mean more.</span>”</blockquote>
+ <small>THE DESIGN CASTLE PHILOSOPHY</small>
+</div></section>
+
+
+<section class="extra-studio" id="interactive-studio">
+ <div class="container">
+  <div class="section-head reveal"><div class="eyebrow">Explore Your Ideas</div><h2>Interactive <span class="gold">Design Studio</span></h2><p>Try a palette, compare inspiration images, arrange a simple room concept and prepare ideas to discuss with Design Castle.</p></div>
+  <div class="extra-grid">
+   <article class="extra-panel">
+    <h3>Mood Board Creator</h3><p>Choose a colour and room style to build a simple starting direction.</p>
+    <label class="label" for="extraMoodRoom">Room</label><select id="extraMoodRoom"><option>Living room</option><option>Bedroom</option><option>Modular kitchen</option><option>Dining room</option><option>Office</option></select>
+    <label class="label" for="extraMoodStyle">Style</label><select id="extraMoodStyle"><option>Modern</option><option>Minimal</option><option>Classic</option><option>Warm luxury</option><option>Coastal</option></select>
+    <div class="palette" aria-label="Choose a palette">
+     <button type="button" style="background:#b69a75" data-colour="#b69a75" data-colour-name="Warm Sand" aria-label="Warm Sand" aria-pressed="true"></button>
+     <button type="button" style="background:#344b3d" data-colour="#344b3d" data-colour-name="Forest Green" aria-label="Forest Green" aria-pressed="false"></button>
+     <button type="button" style="background:#b9b7af" data-colour="#b9b7af" data-colour-name="Soft Stone" aria-label="Soft Stone" aria-pressed="false"></button>
+     <button type="button" style="background:#b99a52" data-colour="#b99a52" data-colour-name="Metallic Gold" aria-label="Metallic Gold" aria-pressed="false"></button>
+     <button type="button" style="background:#6f9da8" data-colour="#6f9da8" data-colour-name="Coastal Blue" aria-label="Coastal Blue" aria-pressed="false"></button>
+     <button type="button" style="background:#eee7d7" data-colour="#eee7d7" data-colour-name="Ivory" aria-label="Ivory" aria-pressed="false"></button>
+    </div>
+    <div class="mood-result" id="extraMoodOutput">Your mood board will appear here.</div>
+    <div class="extra-actions"><button class="btn btn-gold" id="extraMoodBuild" type="button">Update Mood Board</button><button class="btn btn-outline" id="extraMoodShare" type="button">Share on WhatsApp ↗</button></div>
+   </article>
+   <article class="extra-panel">
+    <h3>Before &amp; After Inspiration</h3><p>Move the slider to compare two illustrative interior photographs. These are inspiration images, not a real project transformation.</p>
+    <div class="compare-box" id="extraCompare">
+     <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85" alt="Illustrative interior inspiration image">
+     <div class="compare-before" id="extraCompareBefore"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85" alt="Second illustrative interior inspiration image"></div>
+    </div>
+    <label class="label" for="extraCompareRange">Comparison position</label><input class="compare-range" type="range" id="extraCompareRange" min="5" max="95" value="50">
+   </article>
+   <article class="extra-panel">
+    <h3>Room Layout Planner</h3><p>Drag the furniture blocks to explore a rough concept. Not to scale or a professional floor plan.</p>
+    <label class="label" for="extraRoomType">Room type</label><select id="extraRoomType"><option>Living room</option><option>Bedroom</option><option>Dining room</option><option>Studio apartment</option></select>
+    <div class="mini-room" id="extraMiniRoom" aria-label="Draggable room concept">
+     <div class="mini-furniture mini-rug" data-item="Rug" tabindex="0">Rug</div><div class="mini-furniture mini-sofa" data-item="Sofa" tabindex="0">Sofa</div><div class="mini-furniture mini-table" data-item="Table" tabindex="0">Table</div><div class="mini-furniture mini-plant" data-item="Plant" tabindex="0">Plant</div>
+    </div>
+    <div class="extra-output" id="extraLayoutOutput">Drag the blocks to adjust your concept.</div>
+    <div class="extra-actions"><button class="btn btn-outline" id="extraLayoutReset" type="button">Reset layout</button><button class="btn btn-gold" id="extraLayoutShare" type="button">Share Layout ↗</button></div>
+   </article>
+   <article class="extra-panel">
+    <h3>Quick Design Guide</h3><p>Generate a simple starting point for your design conversation.</p>
+    <label class="label" for="extraGuideRoom">Room</label><select id="extraGuideRoom"><option>Living room</option><option>Bedroom</option><option>Kitchen</option><option>Bathroom</option><option>Office</option></select>
+    <label class="label" for="extraGuideGoal">Main goal</label><select id="extraGuideGoal"><option>Make the space feel bigger</option><option>More storage</option><option>Luxury look</option><option>Family comfort</option><option>Natural light</option><option>Low-maintenance design</option></select>
+    <label class="label" for="extraGuideBudget">Budget preference</label><select id="extraGuideBudget"><option>Budget-conscious</option><option>Mid-range</option><option>Premium</option></select>
+    <div class="extra-actions"><button class="btn btn-gold" id="extraGuideGenerate" type="button">Generate Ideas</button><button class="btn btn-outline" id="extraGuideShare" type="button">Share on WhatsApp ↗</button></div>
+    <div class="extra-output" id="extraGuideOutput">Your design direction will appear here.</div>
+   </article>
+  </div>
+ </div>
+</section>
+
+
+<section id="faq"><div class="container">
+ <div class="section-head"><div class="eyebrow">Good to Know</div><h2>Frequently Asked <span class="gold">Questions</span></h2></div>
+ <div class="faq-list">
+  <details><summary>How do I start a project?</summary><p>Contact Design Castle with your room type, preferred style, location and approximate budget. The team can discuss your requirements and next steps.</p></details>
+  <details><summary>Can I request a particular interior style?</summary><p>Yes. Share your preferred colours, reference images, materials and the atmosphere you want to create.</p></details>
+  <details><summary>How much will my interior project cost?</summary><p>Costs depend on the space, materials, furniture, finishes and scope of work. The website calculator is only an illustrative planning tool, not a quotation.</p></details>
+  <details><summary>Can I contact you through Instagram?</summary><p>Yes. Visit the official Design Castle Instagram profile using the link on this website.</p></details>
+  <details><summary>Are the gallery pictures completed Design Castle projects?</summary><p>The current gallery uses illustrative interior inspiration images. Replace these with verified company project photographs when available.</p></details>
+ </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="container">
+ <div class="section-head"><div class="eyebrow">Let's Create Something Exceptional</div><h2>Begin Your <span class="gold">Story</span></h2><p>Tell us about the space you dream of creating.</p></div>
+ <div class="contact-grid">
+  <div class="contact-copy">
+   <h2 style="font-size:38px">Let's talk about<br><span class="gold">your vision.</span></h2>
+   <p>Every beautiful space starts with a conversation. Reach out to discuss your ideas and project requirements.</p>
+   <a class="contact-link" href="tel:+918891155322"><span class="icon">☎</span><span><small>CALL US</small><strong>8891155322</strong></span></a>
+   <a class="contact-link" href="https://www.instagram.com/design.castle_/" target="_blank" rel="noopener noreferrer"><span class="icon">◎</span><span><small>FOLLOW OUR WORK</small><strong>@design.castle_</strong></span></a>
+   <a class="contact-link" href="https://wa.me/918891155322" target="_blank" rel="noopener noreferrer"><span class="icon">◉</span><span><small>WHATSAPP</small><strong>Start a conversation</strong></span></a>
+  </div>
+  <form class="contact-form" id="contactForm">
+   <h3>Project Enquiry</h3><p>Fill in your details to prepare a WhatsApp enquiry.</p>
+   <div class="form-grid"><div><label for="name">Your name *</label><input id="name" required placeholder="Full name"></div><div><label for="phone">Phone number *</label><input id="phone" required type="tel" placeholder="Your number"></div></div>
+   <label for="email">Email (optional)</label><input id="email" type="email" placeholder="you@example.com">
+   <label for="projectType">Project type</label><select id="projectType"><option>Full home interiors</option><option>Modular kitchen</option><option>Living room</option><option>Bedroom</option><option>Dining room</option><option>Office</option><option>Other</option></select>
+   <label for="message">Tell us about your project *</label><textarea id="message" required placeholder="Location, room size, preferred style and requirements..."></textarea>
+   <button class="btn btn-gold" type="submit">Prepare WhatsApp Enquiry ↗</button>
+   <p id="formStatus" class="hint">This form opens WhatsApp with your message. It does not store or send data to a website server.</p>
+  </form>
+ </div>
+</div></section>
+
+<div class="cta"><div class="container cta-inner"><div><h2>Your Dream Space Starts <span class="gold">Here.</span></h2><p>Thoughtful design. Timeless character. Your story.</p></div><a class="btn btn-gold" href="#contact">Let's Design Together ↗</a></div></div>
+</main>
+
+<footer><div class="container">
+ <div class="footer-grid">
+  <div><a class="brand" href="#home"><div class="logo"><span>DC</span></div><div><div class="brand-name">DESIGN <span class="gold">CASTLE</span></div><div class="brand-sub">THE ART OF LUXURY LIVING</div></div></a><p>Creating beautiful, practical spaces inspired by the people who live in them.</p><div class="socials"><a href="https://www.instagram.com/design.castle_/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://wa.me/918891155322" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div></div>
+  <div><h4>EXPLORE</h4><a class="footlink" href="#about">Our Story</a><a class="footlink" href="#rooms">Interiors</a><a class="footlink" href="#gallery">Gallery</a><a class="footlink" href="#services">Services</a><a class="footlink" href="#planner">Design Planner</a></div>
+  <div><h4>GET IN TOUCH</h4><a class="footlink" href="tel:+918891155322">8891155322</a><a class="footlink" href="https://www.instagram.com/design.castle_/" target="_blank" rel="noopener noreferrer">@design.castle_</a><a class="footlink" href="#contact">Project Enquiry</a></div>
+ </div>
+ <div class="copyright"><span>© <span id="year"></span> Design Castle. All rights reserved.</span><span>Designed with ✦ elegance and purpose.</span></div>
+</div></footer>
+
+<a class="float" href="https://wa.me/918891155322?text=Hello%20Design%20Castle%2C%20I%20would%20like%20to%20discuss%20an%20interior%20design%20project." target="_blank" rel="noopener noreferrer">◉ WhatsApp</a>
+<button class="top" id="backTop" aria-label="Back to top">↑</button>
+<button class="theme" id="themeToggle" aria-label="Switch colour theme" title="Switch light/dark theme">☼</button>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
+ <button id="closeLightbox" aria-label="Close image viewer">×</button><button id="prevImage" aria-label="Previous image">‹</button><img id="lightboxImg" src="" alt=""><button id="nextImage" aria-label="Next image">›</button><div id="lightboxCaption"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+const $ = selector => document.querySelector(selector);
+const $$ = selector => [...document.querySelectorAll(selector)];
+const WHATSAPP = "918891155322";
+
+/* Mobile navigation */
+$("#menuBtn").addEventListener("click", () => {
+  const nav = $("#navlinks");
+  const open = nav.classList.toggle("open");
+  $("#menuBtn").setAttribute("aria-expanded", String(open));
+  $("#menuBtn").textContent = open ? "×" : "☰";
+});
+$$(".navlinks a").forEach(link => link.addEventListener("click", () => {
+  $("#navlinks").classList.remove("open");
+  $("#menuBtn").setAttribute("aria-expanded", "false");
+  $("#menuBtn").textContent = "☰";
+}));
+
+/* Light/dark theme */
+$("#themeToggle").addEventListener("click", () => {
+  document.body.classList.toggle("light");
+  const light = document.body.classList.contains("light");
+  $("#themeToggle").textContent = light ? "☾" : "☼";
+  try { localStorage.setItem("dc-theme", light ? "light" : "dark"); } catch(e) {}
+});
+try {
+  if (localStorage.getItem("dc-theme") === "light") {
+    document.body.classList.add("light");
+    $("#themeToggle").textContent = "☾";
+  }
+} catch(e) {}
+
+/* Reveal animations */
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.1});
+  $$(".reveal").forEach(el => observer.observe(el));
+} else {
+  $$(".reveal").forEach(el => el.classList.add("visible"));
+}
+
+/* Gallery search and category filter */
+const galleryCards = $$(".gallery-card");
+function filterGallery() {
+  const query = $("#gallerySearch").value.trim().toLowerCase();
+  const category = $("#galleryFilter").value;
+  galleryCards.forEach(card => {
+    const title = (card.dataset.title + " " + card.dataset.category).toLowerCase();
+    card.hidden = !(title.includes(query) && (category === "all" || card.dataset.category.split(" ").includes(category)));
+  });
+}
+$("#gallerySearch").addEventListener("input", filterGallery);
+$("#galleryFilter").addEventListener("change", filterGallery);
+$("#resetGallery").addEventListener("click", () => {
+  $("#gallerySearch").value = "";
+  $("#galleryFilter").value = "all";
+  filterGallery();
+});
+
+/* Full-screen image viewer */
+let currentImage = 0;
+function visibleCards() { return galleryCards.filter(card => !card.hidden); }
+function openImage(card) {
+  const cards = visibleCards();
+  currentImage = Math.max(0, cards.indexOf(card));
+  showImage();
+  $("#lightbox").classList.add("open");
+  document.body.style.overflow = "hidden";
+  $("#closeLightbox").focus();
+}
+function showImage() {
+  const cards = visibleCards();
+  if (!cards.length) return;
+  currentImage = (currentImage + cards.length) % cards.length;
+  const card = cards[currentImage];
+  $("#lightboxImg").src = card.querySelector("img").src;
+  $("#lightboxImg").alt = card.querySelector("img").alt;
+  $("#lightboxCaption").textContent = card.dataset.title;
+}
+function closeImage() {
+  $("#lightbox").classList.remove("open");
+  document.body.style.overflow = "";
+}
+galleryCards.forEach(card => card.addEventListener("click", () => openImage(card)));
+$("#closeLightbox").addEventListener("click", closeImage);
+$("#prevImage").addEventListener("click", () => { currentImage--; showImage(); });
+$("#nextImage").addEventListener("click", () => { currentImage++; showImage(); });
+$("#lightbox").addEventListener("click", e => { if (e.target.id === "lightbox") closeImage(); });
+document.addEventListener("keydown", e => {
+  if (!$("#lightbox").classList.contains("open")) return;
+  if (e.key === "Escape") closeImage();
+  if (e.key === "ArrowLeft") { currentImage--; showImage(); }
+  if (e.key === "ArrowRight") { currentImage++; showImage(); }
+});
+
+/* Budget calculator */
+const money = amount => new Intl.NumberFormat("en-IN", {
+  style:"currency", currency:"INR", maximumFractionDigits:0
+}).format(amount);
+function calculateBudget() {
+  const area = Number($("#area").value);
+  const finish = Number($("#finish").value);
+  const roomFactor = Number($("#roomType").value);
+  const total = area * finish * roomFactor;
+  $("#areaValue").textContent = area.toLocaleString("en-IN");
+  $("#estimate").textContent = money(total);
+  $("#estimateRange").textContent =
+    "Illustrative planning range: " + money(total * 0.8) +
+    " – " + money(total * 1.2) + ". Actual costs may vary substantially.";
+}
+["area","finish","roomType"].forEach(id => $("#" + id).addEventListener("input", calculateBudget));
+calculateBudget();
+
+/* Design brief builder */
+let generatedBrief = "";
+$("#buildBrief").addEventListener("click", () => {
+  const name = $("#clientName").value.trim() || "Not provided";
+  const room = $("#briefRoom").value;
+  const styles = $$('input[name="style"]:checked').map(el => el.value);
+  const budget = $("#budget").value;
+  const notes = $("#briefNotes").value.trim() || "No additional notes";
+  generatedBrief = `DESIGN CASTLE — DESIGN BRIEF
+Name: ${name}
+Project: ${room}
+Preferred style: ${styles.join(", ") || "Open to suggestions"}
+Budget: ${budget}
+Requirements: ${notes}`;
+  $("#briefOutput").textContent = generatedBrief;
+  $("#briefOutput").hidden = false;
+  $("#sendBrief").hidden = false;
+});
+$("#sendBrief").addEventListener("click", () => {
+  if (!generatedBrief) return;
+  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Hello Design Castle,\n\n" + generatedBrief), "_blank", "noopener");
+});
+
+/* Contact form creates a WhatsApp message */
+$("#contactForm").addEventListener("submit", event => {
+  event.preventDefault();
+  const name = $("#name").value.trim();
+  const phone = $("#phone").value.trim();
+  const email = $("#email").value.trim() || "Not provided";
+  const project = $("#projectType").value;
+  const message = $("#message").value.trim();
+
+  if (!name || !phone || !message) {
+    $("#formStatus").textContent = "Please fill in your name, phone number and project details.";
+    return;
+  }
+  const text = `Hello Design Castle! I would like to enquire about an interior design project.
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Project type: ${project}
+Project details: ${message}`;
+  $("#formStatus").textContent = "Opening WhatsApp with your prepared enquiry...";
+  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+});
+
+/* Back to top */
+window.addEventListener("scroll", () => {
+  $("#backTop").classList.toggle("show", window.scrollY > 450);
+});
+$("#backTop").addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+
+/* Footer year */
+$("#year").textContent = new Date().getFullYear();
+
+/* Interactive Studio additions */
+(function(){
+ const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+ const wa="https://wa.me/918891155322?text=";
+ let moodColour="#b69a75", moodName="Warm Sand";
+ function updateMood(){
+  const room=$("#extraMoodRoom").value,style=$("#extraMoodStyle").value;
+  $("#extraMoodOutput").textContent="MOOD BOARD\nRoom: "+room+"\nStyle: "+style+"\nPalette: "+moodName+" ("+moodColour+")\n\nDirection: pair this palette with balanced lighting, practical storage and materials that suit how the room is used.";
+ }
+ $$(".palette button").forEach(btn=>btn.addEventListener("click",()=>{
+  $$(".palette button").forEach(b=>b.setAttribute("aria-pressed",String(b===btn)));
+  moodColour=btn.dataset.colour;moodName=btn.dataset.colourName;updateMood();
+ }));
+ $("#extraMoodBuild").addEventListener("click",updateMood);
+ $("#extraMoodRoom").addEventListener("change",updateMood);$("#extraMoodStyle").addEventListener("change",updateMood);
+ $("#extraMoodShare").addEventListener("click",()=>window.open(wa+encodeURIComponent("Hello Design Castle! Please help me develop this mood board:\n"+$("#extraMoodOutput").textContent),"_blank","noopener"));
+ $("#extraCompareRange").addEventListener("input",e=>$("#extraCompareBefore").style.width=e.target.value+"%");
+ const room=$("#extraMiniRoom");let active=null,offsetX=0,offsetY=0;
+ $$(".mini-furniture",room).forEach(item=>{
+  item.addEventListener("pointerdown",e=>{active=item;const r=item.getBoundingClientRect();offsetX=e.clientX-r.left;offsetY=e.clientY-r.top;item.setPointerCapture(e.pointerId);});
+  item.addEventListener("pointermove",e=>{if(active!==item)return;const r=room.getBoundingClientRect();let x=Math.max(0,Math.min(r.width-item.offsetWidth,e.clientX-r.left-offsetX));let y=Math.max(0,Math.min(r.height-item.offsetHeight,e.clientY-r.top-offsetY));item.style.left=(x/r.width*100)+"%";item.style.top=(y/r.height*100)+"%";$("#extraLayoutOutput").textContent=item.dataset.item+" moved. Room: "+$("#extraRoomType").value+". Concept only — not to scale.";});
+  item.addEventListener("pointerup",()=>active=null);item.addEventListener("pointercancel",()=>active=null);
+ });
+ function resetLayout(){const defaults=[[".mini-rug",17,20],[".mini-sofa",24,57],[".mini-table",39,30],[".mini-plant",82,8]];defaults.forEach(([sel,l,t])=>{const el=$(sel);el.style.left=l+"%";el.style.top=t+"%";});$("#extraLayoutOutput").textContent="Layout reset. Drag the blocks to adjust your concept.";}
+ $("#extraLayoutReset").addEventListener("click",resetLayout);
+ $("#extraLayoutShare").addEventListener("click",()=>{const positions=$$(".mini-furniture",room).map(el=>el.dataset.item+": left "+Math.round(parseFloat(el.style.left||getComputedStyle(el).left)/room.clientWidth*100||parseFloat(el.style.left)||0)+"%, top "+Math.round(parseFloat(el.style.top)||0)+"%").join("\n");window.open(wa+encodeURIComponent("Hello Design Castle! Here is my rough room layout concept.\nRoom: "+$("#extraRoomType").value+"\n"+positions+"\nPlease help me plan a measured layout."),"_blank","noopener");});
+ const ideas={
+  "Make the space feel bigger":"Use a restrained palette, multi-purpose furniture, clear walking paths and layered lighting.",
+  "More storage":"Plan storage around actual belongings, use vertical space and consider closed cabinets to reduce visual clutter.",
+  "Luxury look":"Combine a few complementary materials, balanced lighting and restrained accents rather than decorating every surface.",
+  "Family comfort":"Prioritise durable finishes, comfortable seating, easy movement and lighting for different activities.",
+  "Natural light":"Keep window areas clear, use light-reflecting finishes thoughtfully and layer ambient lighting for evenings.",
+  "Low-maintenance design":"Choose durable surfaces, easy-to-clean finishes and practical storage."
+ };
+ function generateGuide(){const room=$("#extraGuideRoom").value,goal=$("#extraGuideGoal").value,budget=$("#extraGuideBudget").value;$("#extraGuideOutput").textContent="DESIGN STARTING POINT\nRoom: "+room+"\nGoal: "+goal+"\nBudget preference: "+budget+"\n\nSuggested direction:\n"+ideas[goal]+"\n\nNext step: measure the space, list must-haves and discuss your requirements with Design Castle. These are general ideas, not professional architectural drawings.";}
+ $("#extraGuideGenerate").addEventListener("click",generateGuide);
+ $("#extraGuideShare").addEventListener("click",()=>{if($("#extraGuideOutput").textContent==="Your design direction will appear here.")generateGuide();window.open(wa+encodeURIComponent("Hello Design Castle! Please discuss these design ideas with me:\n"+$("#extraGuideOutput").textContent),"_blank","noopener");});
+ updateMood();resetLayout();generateGuide();
+})();
+
+</script>
+
+<a class="float" style="right:auto;left:20px;bottom:20px;background:#b83280" href="https://www.instagram.com/design.castle_/" target="_blank" rel="noopener noreferrer" aria-label="Open Design Castle on Instagram">◎ Instagram</a>
+
+</body>
+</html>
